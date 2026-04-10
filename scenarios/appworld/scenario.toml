@@ -1,0 +1,56 @@
+
+[scenario]  
+name = "appworld"  
+description = "AppWorld benchmark evaluation scenario with MCP-based tool delegation"  
+version = "1.0.0"
+# Green Agent
+[[agents]]  
+name = "AppWorld Green Agent"  
+card = "green_agent/green_agent_card.toml"  
+launcher_host = "0.0.0.0"  
+launcher_port = 9110  
+agent_host = "0.0.0.0"  
+agent_port = 9111  
+model_type = "openai"  
+model_name = "gpt-4o"  
+tools = ["green_agent/orchestration_tools.py"]  
+mcp_servers = ["http://localhost:9001/sse"] 
+is_green = true  
+task_config = "e7a10f8_1" 
+
+[[agents.participant_requirements]]  
+  role = "blue_agent"  
+  name = "AppWorld Blue Agent"  
+  required = true  
+  participant_agent = "AppWorld Blue Agent" 
+
+
+[[agents]]
+name = "AppWorld Blue Agent"
+card = "blue_agent/blue_agent_card.toml"
+launcher_host = "0.0.0.0"  
+launcher_port = 9112  
+agent_host = "0.0.0.0"  
+agent_port = 9113  
+model_type = "openai"  
+model_name = "gpt-4o"  
+tools = ["blue_agent/tools.py"]  
+mcp_servers = ["http://localhost:9001/sse"] 
+
+
+
+[launch]  
+mode = "current"  
+tmux_session_name = "agentbeats-appworld"  
+startup_interval = 1  
+wait_for_services = true
+
+
+
+
+
+
+
+
+
+
