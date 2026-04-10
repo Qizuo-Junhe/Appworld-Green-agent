@@ -1,7 +1,8 @@
 # Agentbeats Official SDK & Scenarios
 
 > **Course Project:** UC Berkeley CS194
-> > **Team Members:** > - Jinhao Yu (qizuojunhe04@gmail.com)
+> > **Team Members:** 
+> - Jinhao Yu (qizuojunhe04@gmail.com)
 > - Keyue Liao (kl4714@berkeley.edu)
 > - Yilin Liu (yilinliu610@berkeley.edu)
 
